@@ -13,3 +13,10 @@ long readUltrasonicDistance(int triggerPin, int echoPin)
   // Reads the echo pin, and returns the sound wave travel time in microseconds
   return pulseIn(echoPin, HIGH);
 }
+void setup()
+{
+  Serial.begin(9600);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+}
