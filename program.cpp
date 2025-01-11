@@ -20,3 +20,25 @@ void setup()
   pinMode(9, OUTPUT);
   pinMode(10, OUTPUT);
 }
+
+void loop()
+{
+  val = 0.01723 * readUltrasonicDistance(0, 5);
+  Serial.println(val);
+  if (val <= 50) {
+    digitalWrite(8, HIGH);
+  } else {
+    digitalWrite(8, LOW);
+  }
+  if (val <= 75) {
+    digitalWrite(9, HIGH);
+  } else {
+    digitalWrite(9, LOW);
+  }
+  if (val <= 100) {
+    digitalWrite(10, HIGH);
+  } else {
+    digitalWrite(10, LOW);
+  }
+  delay(10); // Delay a little bit to improve simulation performance
+}
